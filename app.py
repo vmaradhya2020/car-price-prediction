@@ -3,10 +3,12 @@
 import streamlit as st
 import pandas as pd
 import pickle
+import joblib
 
 # Load the trained model
 with open('random_forest_classifier_car_price.pkl', 'rb') as f:
-    model = pickle.load(f)
+    # model = pickle.load(f)
+    model = joblib.load(f)
 
 st.title("🚗 Car Price Prediction App")
 st.write("Predict car prices based on brand, year, mileage, and other features.")
